@@ -4,7 +4,8 @@
   "description": "Application that enables users to pull investment data and history.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "keywords": [
     "market",
@@ -17,6 +18,10 @@
   "author": "Donald Flobeck",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.6.2"
+    "parcel": "^2.6.2",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "dependencies": {
+    "svg-loaders": "^0.2.0"
   }
 }
