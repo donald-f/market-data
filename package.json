@@ -1,0 +1,22 @@
+{
+  "name": "market-data",
+  "version": "1.0.0",
+  "description": "Application that enables users to pull investment data and history.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "market",
+    "data",
+    "market",
+    "stock",
+    "bond",
+    "quotes"
+  ],
+  "author": "Donald Flobeck",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  }
+}
