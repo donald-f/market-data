@@ -4,7 +4,8 @@ import * as model from './model.js';
 import searchView from './views/searchView.js';
 
 const controlSearchResults = function () {
-  model.getStockResults();
+  const query = searchView.getQuery();
+  model.getStockResults(query);
 };
 const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
