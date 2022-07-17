@@ -1,6 +1,11 @@
+:root {
+  --off-black: rgba(0, 0, 0, ..897);
+  --aside-width: 220px;
+}
 body {
   font-family: cursive;
   background-color: rgb(242, 240, 233);
+  color: var(--off-black);
 }
 .security-container {
   display: flex;
@@ -8,22 +13,31 @@ body {
   flex-wrap: nowrap;
 }
 aside {
-  width: 20%;
+  background-color: white;
+  min-width: var(--aside-width);
+  flex-basis: var(--aside-width);
+  display: flex;
+  justify-content: center;
 }
 main {
   background-color: aqua;
-  width: 80%;
+  flex-grow: 1;
 }
 .search {
+  flex-basis: 200px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
 }
 .query-label {
   display: block;
   width: 100%;
   padding: 5px;
+}
+.search_box_and_btn {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--off-black);
 }
 .spinner-svg {
   vertical-align: middle;
