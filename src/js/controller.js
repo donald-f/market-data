@@ -1,12 +1,18 @@
 import 'regenerator-runtime/runtime.js'; // polyfilling async await
-import 'stable/stable.js'; // used for polyfilling everything else
+// import 'core-js.stable'; // used for polyfilling everything else
 import * as model from './model.js';
 import searchView from './views/searchView.js';
-import OutputView from './views/OutputView.js';
+import metaDataView from './views/metaDataView.js';
+import historyDataView from './views/historyDataView.js';
 
-const controlSearchResults = function () {
+const controlSearchResults = async function () {
   const query = searchView.getQuery();
-  model.getStockResults(query);
+  if (!query) return;
+  metaDataView.renderSpinner();
+  historyDataView.renderSpinner();
+  await model.getStockResults(query);
+  console.log(model.state.search.meta);
+  metaDataView.render(model.state.search.meta);
 };
 const init = function () {
   searchView.addHandlerSearch(controlSearchResults);

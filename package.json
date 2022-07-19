@@ -2,7 +2,7 @@
   "name": "market-data",
   "version": "1.0.0",
   "description": "Application that enables users to pull investment data and history.",
-  "main": "index.js",
+  "default": "index.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist"
