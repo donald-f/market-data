@@ -49,3 +49,14 @@ main {
 .break {
   height: 0;
 }
+.investment-meta {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 30px;
+  gap: 40px;
+}
+.meta-data-point {
+  /* display: flex; */
+  text-align: center;
+}

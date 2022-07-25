@@ -13,6 +13,7 @@ const controlSearchResults = async function () {
   await model.getStockResults(query);
   console.log(model.state.search.meta);
   metaDataView.render(model.state.search.meta);
+  historyDataView.render(model.state.search.values);
 };
 const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
