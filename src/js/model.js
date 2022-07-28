@@ -8,6 +8,7 @@ export const state = {
     results: [],
     page: 1,
     resultsPerPage: RES_PER_PAGE,
+    intervalData: [],
   },
   bookmarks: [],
 };
@@ -22,7 +23,7 @@ export const getStockResults = async function (query) {
     state.search.page = 1;
     state.search.meta = Object.entries(data.meta);
     console.log(state.search.meta);
-    state.search.invervalData = data.values;
+    state.search.intervalData = data.values;
   } catch (err) {
     console.error(err);
   }
