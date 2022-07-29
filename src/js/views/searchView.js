@@ -19,3 +19,23 @@ class SearchView extends View {
   }
 }
 export default new SearchView();
+
+/*
+I can use code similar to the below in order to handle bad date inputs such as making the 
+function handler(e){
+  alert(e.target.value);
+}
+<input type="date" id="dt" onchange="handler(event);"/>
+
+Although I may just wish to uses the API's built in error handling (the below is what we get if we have a start date more recent than the end date)
+{
+	"code": 400,
+	"message": "No data is available on the specified dates. Try setting different start/end dates.",
+	"status": "error",
+	"meta": {
+		"symbol": "AAPL",
+		"interval": "1day",
+		"exchange": ""
+	}
+}
+*/
