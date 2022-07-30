@@ -5,6 +5,7 @@ class HistoryDataView extends View {
   _errorMessage = 'No Security Found. Try again. ;)';
   _generateMarkup() {
     let markup = `
+    <a href="${this._data.csvURL}">Export</a>
     <table class="hist-data">
       <thead>
         <tr>
@@ -18,7 +19,7 @@ class HistoryDataView extends View {
       </thead>
       <tbody>
     `;
-    this._data.forEach((element) => {
+    this._data.intervalData.forEach((element) => {
       markup += `
     <tr>
       <td>${element.datetime}</td>

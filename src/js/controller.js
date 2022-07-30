@@ -14,9 +14,10 @@ const controlSearchResults = async function () {
   console.log(model.state.search.meta);
   metaDataView.render(model.state.search.meta);
   console.log(model.state.search.intervalData);
-  historyDataView.render(model.state.search.intervalData);
+  historyDataView.render(model.state.search);
 };
 const init = function () {
+  searchView.fillHeight();
   searchView.addHandlerSearch(controlSearchResults);
 };
 init();
