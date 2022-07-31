@@ -17,7 +17,7 @@ const controlSearchResults = async function () {
   historyDataView.render(model.state.search);
 };
 const init = function () {
-  searchView.fillHeight();
+  // searchView.fillHeight();
   searchView.addHandlerSearch(controlSearchResults);
 };
 init();

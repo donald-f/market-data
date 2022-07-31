@@ -17,17 +17,17 @@ class SearchView extends View {
       handler(query);
     });
   }
-  fillHeight() {
-    const viewportHeight = window.innerHeight;
-    const heightUsedAlready = ['header', 'nav'].reduce(
-      (prev, el) => prev + document.querySelector(el).clientHeight,
-      0
-    );
-    const proposedNewHeight = viewportHeight - heightUsedAlready;
-    console.log(viewportHeight, heightUsedAlready);
-    if (this._parentElement.clientHeight < proposedNewHeight)
-      this._parentElement.style.height = `${proposedNewHeight}px`;
-  }
+  // fillHeight() {
+  //   const viewportHeight = window.innerHeight;
+  //   const heightUsedAlready = ['header', 'nav'].reduce(
+  //     (prev, el) => prev + document.querySelector(el).clientHeight,
+  //     0
+  //   );
+  //   const proposedNewHeight = viewportHeight - heightUsedAlready;
+  //   console.log(viewportHeight, heightUsedAlready);
+  //   if (this._parentElement.clientHeight < proposedNewHeight)
+  //     this._parentElement.style.height = `${proposedNewHeight}px`;
+  // }
 }
 export default new SearchView();
 

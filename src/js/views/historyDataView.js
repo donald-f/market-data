@@ -9,12 +9,12 @@ class HistoryDataView extends View {
     <table class="hist-data">
       <thead>
         <tr>
-          <th>datetime</th>
-          <th>open</th>
-          <th>high</th>
-          <th>low</th>
+          <th>Date</th>
+          <th class="non-essential-cell">open</th>
+          <th class="non-essential-cell">high</th>
+          <th class="non-essential-cell">low</th>
           <th>close</th>
-          <th>volume</th>
+          <th class="non-essential-cell">volume</th>
         </tr>
       </thead>
       <tbody>
@@ -23,11 +23,11 @@ class HistoryDataView extends View {
       markup += `
     <tr>
       <td>${element.datetime}</td>
-      <td>${element.open}</td>
-      <td>${element.low}</td>
-      <td>${element.low}</td>
+      <td class="non-essential-cell">${element.open}</td>
+      <td class="non-essential-cell">${element.low}</td>
+      <td class="non-essential-cell">${element.low}</td>
       <td>${element.close}</td>
-      <td>${element.volume}</td>
+      <td class="non-essential-cell">${element.volume}</td>
     </tr>`;
     });
     markup += '</tbody></table>';
