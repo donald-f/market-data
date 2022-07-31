@@ -4,6 +4,7 @@
   --dates-width: 100px;
 }
 body {
+  box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
   background-color: rgb(242, 240, 233);
   color: var(--off-black);
@@ -45,7 +46,7 @@ main {
   padding-bottom: 10px;
   border-bottom: 1px solid var(--off-black);
 }
-select.range-or-trailing {
+.centered-dropdown {
   text-align: center;
 }
 .date-range-sec {

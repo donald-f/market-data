@@ -7,11 +7,6 @@
     "start": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist"
   },
-  "targets": {
-    "main": {
-      "optimize": true
-    }
-  },
   "keywords": [
     "market",
     "data",
