@@ -90,9 +90,14 @@ table.hist-data > * > tr > * {
   /* display: flex; */
   text-align: center;
 }
+.investment-history {
+  display: flex;
+  flex-flow: column;
+  align-items: space-around;
+  justify-content: center;
+}
 @media only screen and (max-width: 600px) {
   .security-container {
-    flex-wrap: wrap;
     flex-direction: column;
   }
   .non-essential-cell {
