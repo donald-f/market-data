@@ -7,7 +7,7 @@ class HistoryDataView extends View {
     let markup = `
     <a href="${this._data.csvURL}">Export</a>
     <table class="hist-data">
-      <thead>
+      <thead class="stick">
         <tr>
           <th>Date</th>
           <th class="non-essential-cell">open</th>
@@ -22,7 +22,7 @@ class HistoryDataView extends View {
     this._data.intervalData.forEach((element) => {
       markup += `
     <tr>
-      <td>${element.datetime}</td>
+      <td class="dates">${element.datetime}</td>
       <td class="non-essential-cell">${element.open}</td>
       <td class="non-essential-cell">${element.low}</td>
       <td class="non-essential-cell">${element.low}</td>
