@@ -2,6 +2,10 @@ import View from './View.js';
 
 class SearchView extends View {
   _parentElement = document.querySelector('.search');
+  constructor() {
+    super();
+    this._addHandlerToggleRangeSelector();
+  }
   getQuery() {
     const query = this._parentElement.querySelector('.search__field').value;
     this._clearInput();
@@ -17,17 +21,18 @@ class SearchView extends View {
       handler(query);
     });
   }
-  // fillHeight() {
-  //   const viewportHeight = window.innerHeight;
-  //   const heightUsedAlready = ['header', 'nav'].reduce(
-  //     (prev, el) => prev + document.querySelector(el).clientHeight,
-  //     0
-  //   );
-  //   const proposedNewHeight = viewportHeight - heightUsedAlready;
-  //   console.log(viewportHeight, heightUsedAlready);
-  //   if (this._parentElement.clientHeight < proposedNewHeight)
-  //     this._parentElement.style.height = `${proposedNewHeight}px`;
-  // }
+  _addHandlerToggleRangeSelector() {
+    this._parentElement
+      .querySelector('.range-or-trailing')
+      .addEventListener('change', () => {
+        this._parentElement
+          .querySelector('.trailing-selection')
+          .classList.toggle('hidden');
+        this._parentElement
+          .querySelector('.date-range-sec')
+          .classList.toggle('hidden');
+      });
+  }
 }
 export default new SearchView();
 

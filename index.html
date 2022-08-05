@@ -37,13 +37,13 @@
             <option value="date-range ">Date Range</option>
           </select>
           <select
-            class="range-or-trailing centered-dropdown"
-            name="range-or-trailing"
+            class="trailing-selection centered-dropdown"
+            name="trailing-selection"
           >
             <option value="trailing-7-days" class="trailing-7-days">
               Last 7 Days
             </option>
-            <option value="trailing-30-days" class="trailing-30-days">
+            <option value="trailing-30-days" class="trailing-30-days" selected>
               Last 30 Days
             </option>
             <option value="trailing-90-days" class="trailing-90-days">
@@ -65,12 +65,9 @@
               Last 10 Years
             </option>
           </select>
-          <div class="date-range-sec">
-            <input type="date" name="" class="" /><input
-              type="date"
-              name=""
-              class=""
-            />
+          <div class="date-range-sec hidden">
+            <input type="date" name="" class="" />
+            <input type="date" name="" class="" />
           </div>
         </form>
       </aside>
