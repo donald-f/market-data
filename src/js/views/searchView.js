@@ -2,12 +2,31 @@ import View from './View.js';
 
 class SearchView extends View {
   _parentElement = document.querySelector('.search');
+  _rangeOrTrailingDropdownEl =
+    this._parentElement.querySelector('.range-or-trailing');
+  _trailingDropdownEl = this._parentElement.querySelector(
+    '.trailing-selection'
+  );
+  _dateRangeSecEl = this._parentElement.querySelector('.date-range-sec');
   constructor() {
     super();
     this._addHandlerToggleRangeSelector();
   }
   getQuery() {
-    const query = this._parentElement.querySelector('.search__field').value;
+    const timePeriod =
+      this._rangeOrTrailingDropdownEl.options[
+        this._rangeOrTrailingDropdownEl.selectedIndex
+      ].value === 'trailing'
+        ? +this._trailingDropdownEl.options[
+            this._trailingDropdownEl.options.selectedIndex
+          ].dataset.daysback
+        : Array.from(this._parentElement.querySelectorAll('.date-picker')).map(
+            (date) => date.value
+          );
+    const query = {
+      symbol: this._parentElement.querySelector('.search__field').value,
+      timePeriod: timePeriod,
+    };
     this._clearInput();
     return query;
   }
@@ -25,12 +44,8 @@ class SearchView extends View {
     this._parentElement
       .querySelector('.range-or-trailing')
       .addEventListener('change', () => {
-        this._parentElement
-          .querySelector('.trailing-selection')
-          .classList.toggle('hidden');
-        this._parentElement
-          .querySelector('.date-range-sec')
-          .classList.toggle('hidden');
+        this._trailingDropdownEl.classList.toggle('hidden');
+        this._dateRangeSecEl.classList.toggle('hidden');
       });
   }
 }

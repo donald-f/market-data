@@ -4,7 +4,7 @@
   --darker: #c1c1c1;
   --dark: #fafafa;
   --light: #fff;
-  --aside-width: 220px;
+  --aside-width: 232px;
   --dates-width: 100px;
 }
 body {
@@ -42,7 +42,7 @@ main {
   flex-direction: column;
 }
 .search {
-  flex-basis: 200px;
+  flex-basis: 232px;
   display: flex;
   flex-direction: column;
 }
@@ -90,7 +90,7 @@ table.hist-data > * > tr > * {
 table.hist-data > * > tr > td {
   border-top: 1px solid var(--darker);
   border-bottom: 1px solid var(--darker);
-  text-align: right;
+  text-align: center;
 }
 table.hist-data > * > tr > th {
   background-color: var(--light);

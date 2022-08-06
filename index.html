@@ -33,41 +33,75 @@
             class="range-or-trailing centered-dropdown"
             name="range-or-trailing"
           >
-            <option value="trailing ">Trailing</option>
+            <option value="trailing">Trailing</option>
             <option value="date-range ">Date Range</option>
           </select>
           <select
             class="trailing-selection centered-dropdown"
             name="trailing-selection"
           >
-            <option value="trailing-7-days" class="trailing-7-days">
+            <option
+              value="trailing-7-days"
+              data-daysBack="7"
+              class="trailing-7-days"
+            >
               Last 7 Days
             </option>
-            <option value="trailing-30-days" class="trailing-30-days" selected>
+            <option
+              value="trailing-30-days"
+              data-daysBack="30"
+              class="trailing-30-days"
+              selected
+            >
               Last 30 Days
             </option>
-            <option value="trailing-90-days" class="trailing-90-days">
+            <option
+              value="trailing-90-days"
+              data-daysBack="90"
+              class="trailing-90-days"
+            >
               Last 90 Days
             </option>
-            <option value="trailing-180-days" class="trailing-180-days">
+            <option
+              value="trailing-180-days"
+              data-daysBack="180"
+              class="trailing-180-days"
+            >
               Last 180 Days
             </option>
-            <option value="trailing-1-year" class="trailing-1-year">
+            <option
+              value="trailing-1-year"
+              data-daysBack="365"
+              class="trailing-1-year"
+            >
               Last 365 Days
             </option>
-            <option value="trailing-3-year" class="trailing-3-year">
+            <option
+              value="trailing-3-year"
+              data-daysBack="1095"
+              class="trailing-3-year"
+            >
               Last 3 Years
             </option>
-            <option value="trailing-5-year" class="trailing-5-year">
+            <option
+              value="trailing-5-year"
+              data-daysBack="1825"
+              class="trailing-5-year"
+            >
               Last 5 Years
             </option>
-            <option value="trailing-10-year" class="trailing-10-year">
+            <option
+              value="trailing-10-year"
+              data-daysBack="3650"
+              class="trailing-10-year"
+            >
               Last 10 Years
             </option>
           </select>
           <div class="date-range-sec hidden">
-            <input type="date" name="" class="" />
-            <input type="date" name="" class="" />
+            <input type="date" name="" class="date-picker" />
+            -
+            <input type="date" name="" class="date-picker" />
           </div>
         </form>
       </aside>
