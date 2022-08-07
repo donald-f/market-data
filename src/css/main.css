@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
+
 :root {
   /* --off-black: rgba(0, 0, 0, 0.897); */
   --off-black: #00273b;
@@ -7,14 +9,18 @@
   --aside-width: 232px;
   --dates-width: 100px;
 }
-body {
+* {
   box-sizing: border-box;
+}
+body {
   font-family: "Source Sans Pro", sans-serif;
   background-color: var(--light);
   color: var(--off-black);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 98vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 /* general use */
 .hidden {
@@ -36,10 +42,11 @@ aside {
   padding: 4px 10px;
 }
 main {
+  display: flex;
   margin: 10px;
-  background-color: var(--light);
   flex-grow: 1;
   flex-direction: column;
+  gap: 10px;
 }
 .search {
   flex-basis: 232px;
@@ -121,10 +128,13 @@ table.hist-data > * > tr > th {
   flex-flow: column;
   align-content: space-around;
   justify-content: center;
+  flex-basis: auto;
+  flex-grow: 1;
 }
 .investment-meta,
 .investment-history {
   padding: 30px;
+  background-color: var(--light);
 }
 .investment-history > * {
   flex-basis: auto;

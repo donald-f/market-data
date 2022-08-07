@@ -10,11 +10,11 @@ class HistoryDataView extends View {
       <thead class="stick">
         <tr>
           <th>Date</th>
-          <th class="non-essential-cell">open</th>
-          <th class="non-essential-cell">high</th>
-          <th class="non-essential-cell">low</th>
-          <th>close</th>
-          <th class="non-essential-cell">volume</th>
+          <th class="non-essential-cell">Open</th>
+          <th class="non-essential-cell">High</th>
+          <th class="non-essential-cell">Low</th>
+          <th>Close</th>
+          <th class="non-essential-cell">Volume</th>
         </tr>
       </thead>
       <tbody>
