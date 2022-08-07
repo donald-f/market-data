@@ -27,7 +27,7 @@ class SearchView extends View {
       symbol: this._parentElement.querySelector('.search__field').value,
       timePeriod: timePeriod,
     };
-    this._clearInput();
+    // this._clearInput();
     return query;
   }
   _clearInput() {

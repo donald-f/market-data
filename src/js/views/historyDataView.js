@@ -24,7 +24,7 @@ class HistoryDataView extends View {
     <tr>
       <td class="dates">${element.datetime}</td>
       <td class="non-essential-cell">${element.open}</td>
-      <td class="non-essential-cell">${element.low}</td>
+      <td class="non-essential-cell">${element.high}</td>
       <td class="non-essential-cell">${element.low}</td>
       <td>${element.close}</td>
       <td class="non-essential-cell">${element.volume}</td>

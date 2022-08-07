@@ -27,3 +27,11 @@ export const AJAX = async function (url, uploadData = undefined) {
     throw err; // the promise that gets returned from getJSON will actually reject.
   }
 };
+
+export const SUBTRACT_DAYS_FORMAT_DATE = function (
+  numOfDays,
+  date = new Date()
+) {
+  date.setDate(date.getDate() - numOfDays);
+  return date.toISOString().split('T')[0];
+};
