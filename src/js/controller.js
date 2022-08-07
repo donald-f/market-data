@@ -20,3 +20,5 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
 };
 init();
+
+// one idea I have is to use a hash in this sites'
