@@ -2,7 +2,7 @@ import View from './View.js';
 
 class MetaDataView extends View {
   _parentElement = document.querySelector('.investment-meta');
-  _errorMessage = 'No Security Found. Try again. ;)';
+  _errorMessage = 'No Security Found. Please try again.';
   _generateMarkup() {
     let markup = '';
     this._data.forEach((element) => {
