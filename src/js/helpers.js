@@ -32,6 +32,9 @@ export const SUBTRACT_DAYS_FORMAT_DATE = function (
   numOfDays,
   date = new Date()
 ) {
+  // this may need some work to make this statically go off of eastern instead of local time.
   date.setDate(date.getDate() - numOfDays);
+  const offset = date.getTimezoneOffset();
+  date = new Date(date.getTime() - offset * 60 * 1000);
   return date.toISOString().split('T')[0];
 };

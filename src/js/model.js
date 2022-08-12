@@ -16,14 +16,11 @@ export const state = {
 export const getStockResults = async function (query) {
   try {
     state.search.query = query;
-    console.log(query.timePeriod[1]);
-    console.log(SUBTRACT_DAYS_FORMAT_DATE(1));
     if (Array.isArray(query.timePeriod)) {
       if (
         new Date(query.timePeriod[1]) > new Date(SUBTRACT_DAYS_FORMAT_DATE(1))
       )
         query.timePeriod[1] = SUBTRACT_DAYS_FORMAT_DATE(1);
-      console.log(query.timePeriod[1]);
     }
     const timePeriod =
       typeof query.timePeriod === 'number' // if the time period is just a number, we know that we are doing a trailing return as opposed to date range.
@@ -37,7 +34,6 @@ export const getStockResults = async function (query) {
     console.log(queryURL);
 
     const data = await AJAX(queryURL);
-    console.log(data);
     if (data.code === 400) {
       // reset the search
       state.search.query = '';
@@ -54,14 +50,11 @@ export const getStockResults = async function (query) {
     const possibleSecFullNames = await AJAX(
       `${API_URL}/symbol_search?symbol=${data.meta.symbol}&outputsize=120`
     );
-    console.log(possibleSecFullNames);
     state.search.secFullName =
       possibleSecFullNames.data.find(
         (sec) =>
           sec.exchange === data.meta.exchange && sec.symbol === data.meta.symbol
       )?.instrument_name || 'name not found';
-    console.log(state.search.secFullName);
-    console.log(state.search.meta);
     state.search.intervalData = data.values;
     state.search.meta.unshift(['Security Name', state.search.secFullName]); // entries needs to be replaced with something better and therefore we wouldn't be using unshift here
   } catch (err) {
