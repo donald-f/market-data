@@ -11,9 +11,7 @@ const controlSearchResults = async function () {
   metaDataView.renderSpinner();
   historyDataView.renderSpinner();
   await model.getStockResults(query);
-  console.log(model.state.search.meta);
-  metaDataView.render(model.state.search.meta);
-  console.log(model.state.search.intervalData);
+  metaDataView.render(model.state.search);
   historyDataView.render(model.state.search);
 };
 const init = function () {

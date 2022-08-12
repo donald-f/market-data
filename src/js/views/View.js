@@ -3,7 +3,7 @@ import puff from '../../img/puff.svg';
 export default class View {
   _data;
   render(data) {
-    if (!data) return this.renderError();
+    if (!data || data.query === '') return this.renderError();
     this._data = data;
     const markup = this._generateMarkup(); // _generateMarkup is on each view
     this._clear();
@@ -28,7 +28,7 @@ export default class View {
             <!--
               perhaps have an error icon here.
             -->
-                <p>${message}</p>
+                <p class="error-message">${message}</p>
             </div>`;
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);

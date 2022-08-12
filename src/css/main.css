@@ -123,6 +123,9 @@ table.hist-data > * > tr > th {
   /* display: flex; */
   text-align: center;
 }
+.error-message {
+  text-align: center;
+}
 .investment-history {
   display: flex;
   flex-flow: column;

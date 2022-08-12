@@ -2,7 +2,7 @@ import View from './View.js';
 
 class HistoryDataView extends View {
   _parentElement = document.querySelector('.investment-history');
-  _errorMessage = 'No Security Found. Try again. ;)';
+  _errorMessage = 'No security history found. Try again.';
   _generateMarkup() {
     let markup = `
     <a href="${this._data.csvURL}">Export</a>
@@ -21,7 +21,7 @@ class HistoryDataView extends View {
       <tbody>
     `;
     this._data.intervalData.forEach((element, i) => {
-      // get return over prior business day (if present)
+      // get return over prior business day (if prior day is present)
       const dayReturn = this._data.intervalData[i + 1]
         ? (
             (+element.close / +this._data.intervalData[i + 1].close - 1) *
