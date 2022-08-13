@@ -78,11 +78,16 @@ main {
 .date-range-sec > input {
   width: var(--dates-width);
 }
+/*
+I don't believe that this was doing anything
 .spinner-svg {
   vertical-align: middle;
   width: 50px;
   height: 50px;
   margin: auto;
+} */
+.investment-history > .spinner {
+  align-self: center;
 }
 table.hist-data {
   display: table;
@@ -129,8 +134,9 @@ table.hist-data > * > tr > th {
 .investment-history {
   display: flex;
   flex-flow: column;
-  align-content: space-around;
-  justify-content: center;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: space-around;
   flex-basis: auto;
   flex-grow: 1;
 }
