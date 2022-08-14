@@ -39,9 +39,13 @@ export default class View {
       //     <svg class="spinner-svg">
       //     <use href="${puff}"></use>
       //   </svg>
+      // i replaced img with object
+      //<img src="${puff}">
       `
       <div class="spinner">
-        <img src="${puff}">
+        <object type="image/svg+xml" data="${puff}" width="40" height="40">
+          Your browser does not support SVG.
+        </object>
       </div>
             `;
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
