@@ -39,10 +39,13 @@ export default class View {
       //     <svg class="spinner-svg">
       //     <use href="${puff}"></use>
       //   </svg>
+      /* <svg aria-hidden="true">
+                <use xlink:href="${puff}"></use>
+            </svg>  */
       `
-              <div class="spinner">
-                <img src=${puff}>
-              </div>
+      <div class="spinner">
+        <img src="${puff}">
+      </div>
             `;
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
