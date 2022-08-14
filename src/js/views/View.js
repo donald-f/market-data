@@ -35,6 +35,7 @@ export default class View {
   }
   renderSpinner() {
     this._clear();
+    console.log(puff);
     const markup =
       //     <svg class="spinner-svg">
       //     <use href="${puff}"></use>
