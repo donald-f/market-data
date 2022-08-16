@@ -1,4 +1,4 @@
-import puff from '../../img/puff.svg';
+import puff from 'url:../../img/puff.svg';
 
 export default class View {
   _data;
