@@ -42,13 +42,16 @@ export default class View {
       //   </svg>
       // i replaced img with object
       //<img src="${puff}">
-      `
-      <div class="spinner">
-        <object type="image/svg+xml" data="${puff}" width="40" height="40">
-          Your browser does not support SVG.
-        </object>
-      </div>
-            `;
+
+      // `
+      // <div class="spinner">
+      //   <object type="image/svg+xml" data="${puff}" width="40" height="40">
+      //     Your browser does not support SVG.
+      //   </object>
+      // </div>
+      //       `;
+
+      `<div class="lds-ripple spinner"><div></div><div></div></div>`;
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
   _clear() {
