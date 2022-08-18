@@ -1,5 +1,3 @@
-import puff from 'url:../../img/puff.svg';
-
 export default class View {
   _data;
   render(data) {
@@ -35,23 +33,7 @@ export default class View {
   }
   renderSpinner() {
     this._clear();
-    console.log(puff);
-    const markup =
-      //     <svg class="spinner-svg">
-      //     <use href="${puff}"></use>
-      //   </svg>
-      // i replaced img with object
-      //<img src="${puff}">
-
-      // `
-      // <div class="spinner">
-      //   <object type="image/svg+xml" data="${puff}" width="40" height="40">
-      //     Your browser does not support SVG.
-      //   </object>
-      // </div>
-      //       `;
-
-      `<div class="lds-ripple spinner"><div></div><div></div></div>`;
+    const markup = `<div class="lds-ripple spinner"><div></div><div></div></div>`;
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
   _clear() {

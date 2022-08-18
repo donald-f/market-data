@@ -46,17 +46,17 @@ export const getStockResults = async function (query) {
     state.search.csvURL = `${queryURL}&format=CSV&delimiter=${CSV_DELIMITER}`;
     // https://api.twelvedata.com/stocks?symbol=AAPL&exchange=NASDAQ&apikey=9120747530c34355afd04d8a8b055f77
     state.search.page = 1;
-    state.search.meta = Object.entries(data.meta); // need to think of something better than entries here.
     const possibleSecFullNames = await AJAX(
       `${API_URL}/symbol_search?symbol=${data.meta.symbol}&outputsize=120`
     );
-    state.search.secFullName =
+    const secFullName =
       possibleSecFullNames.data.find(
         (sec) =>
           sec.exchange === data.meta.exchange && sec.symbol === data.meta.symbol
       )?.instrument_name || 'name not found';
     state.search.intervalData = data.values;
-    state.search.meta.unshift(['Security Name', state.search.secFullName]); // entries needs to be replaced with something better and therefore we wouldn't be using unshift here
+    state.search.meta = { ...data.meta };
+    state.search.meta.securityName = secFullName;
   } catch (err) {
     console.error(err);
   }

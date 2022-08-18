@@ -22,6 +22,9 @@ body {
   margin-top: 1vh;
   margin-bottom: 1vh;
 }
+header {
+  padding: 0 10px;
+}
 /* general use */
 .hidden {
   display: none !important;
@@ -78,14 +81,6 @@ main {
 .date-range-sec > input {
   width: var(--dates-width);
 }
-/*
-I don't believe that this was doing anything
-.spinner-svg {
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
-  margin: auto;
-} */
 .investment-history > .spinner {
   align-self: center;
 }
