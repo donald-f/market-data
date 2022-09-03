@@ -6,13 +6,19 @@ import metaDataView from './views/metaDataView.js';
 import historyDataView from './views/historyDataView.js';
 
 const controlSearchResults = async function () {
-  const query = searchView.getQuery();
-  if (!query) return;
-  metaDataView.renderSpinner();
-  historyDataView.renderSpinner();
-  await model.getStockResults(query);
-  metaDataView.render(model.state.search);
-  historyDataView.render(model.state.search);
+  try {
+    const query = searchView.getQuery();
+    if (!query) return;
+    metaDataView.renderSpinner();
+    historyDataView.renderSpinner();
+    await model.getStockResults(query);
+    metaDataView.render(model.state.search);
+    historyDataView.render(model.state.search);
+  } catch (err) {
+    metaDataView.renderError(err.message);
+    historyDataView.renderError(err.message);
+    console.log(err);
+  }
 };
 const init = function () {
   searchView.addHandlerSearch(controlSearchResults);

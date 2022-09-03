@@ -14,6 +14,13 @@ export const state = {
 };
 
 export const getStockResults = async function (query) {
+  const resetStateSearch = () => {
+    state.search.query = '';
+    state.search.results = [];
+    state.search.page = 1;
+    state.search.intervalData = [];
+    state.search.csvURL = '';
+  };
   try {
     state.search.query = query;
     if (Array.isArray(query.timePeriod)) {
@@ -35,12 +42,7 @@ export const getStockResults = async function (query) {
 
     const data = await AJAX(queryURL);
     if (data.code === 400) {
-      // reset the search
-      state.search.query = '';
-      state.search.results = [];
-      state.search.page = 1;
-      state.search.intervalData = [];
-      state.search.csvURL = '';
+      resetStateSearch();
       throw new Error('Invalid symbol! Please try again.');
     }
     state.search.csvURL = `${queryURL}&format=CSV&delimiter=${CSV_DELIMITER}`;
@@ -59,5 +61,6 @@ export const getStockResults = async function (query) {
     state.search.meta.securityName = secFullName;
   } catch (err) {
     console.error(err);
+    throw new Error(`${err}`);
   }
 };
