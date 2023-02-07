@@ -21,9 +21,14 @@ body {
   min-height: 98vh;
   margin-top: 1vh;
   margin-bottom: 1vh;
+  margin-left: 0;
+  margin-right: 0;
 }
 header {
-  padding: 0 10px;
+  padding: 0 18px;
+  box-shadow: 0 3px 2px #0000000d, 0 2px #0000000d;
+  margin-bottom: 4px;
+  width: 100%;
 }
 /* general use */
 .hidden {
@@ -36,6 +41,8 @@ header {
   flex-direction: row;
   flex-wrap: nowrap;
   flex-grow: 1;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 aside {
   min-width: var(--aside-width);
@@ -113,6 +120,7 @@ table.hist-data > * > tr > th {
   position: sticky;
   top: 0;
 }
+
 .investment-meta {
   display: flex;
   flex-flow: row wrap;
@@ -122,7 +130,6 @@ table.hist-data > * > tr > th {
   min-height: 105px;
 }
 .meta-data-point {
-  /* display: flex; */
   text-align: center;
 }
 .error-message {
@@ -141,6 +148,7 @@ table.hist-data > * > tr > th {
 .investment-history {
   padding: 30px;
   background-color: var(--light);
+  box-shadow: 0 0.1rem 0.4rem 0 rgb(0 0 0 / 20%);
 }
 .investment-history > * {
   flex-basis: auto;
