@@ -20,22 +20,31 @@ class HistoryDataView extends View {
       </thead>
       <tbody>
     `;
-    this._data.intervalData.forEach((element, i) => {
+    this._data.intervalData.forEach((singleDayMarketData, i) => {
       // get return over prior business day (if prior day is present)
       const dayReturn = this._data.intervalData[i + 1]
         ? (
-            (+element.close / +this._data.intervalData[i + 1].close - 1) *
+            (+singleDayMarketData.close /
+              +this._data.intervalData[i + 1].close -
+              1) *
             100
           ).toFixed(2) + '%'
-        : '';
+        : '' &&
+          'will remove the empty string when fixed' &&
+          (
+            (+singleDayMarketData.close /
+              +this._data.dayPriorToIntervalData.close -
+              1) *
+            100
+          ).toFixed(2) + '%';
       markup += `
     <tr>
-      <td class="dates">${element.datetime}</td>
-      <td class="non-essential-cell">${element.volume}</td>
-      <td class="non-essential-cell">${element.open}</td>
-      <td class="non-essential-cell">${element.high}</td>
-      <td class="non-essential-cell">${element.low}</td>
-      <td>${element.close}</td>
+      <td class="dates">${singleDayMarketData.datetime}</td>
+      <td class="non-essential-cell">${singleDayMarketData.volume}</td>
+      <td class="non-essential-cell">${singleDayMarketData.open}</td>
+      <td class="non-essential-cell">${singleDayMarketData.high}</td>
+      <td class="non-essential-cell">${singleDayMarketData.low}</td>
+      <td>${singleDayMarketData.close}</td>
       <td>${dayReturn}</td>
     </tr>`;
     });
